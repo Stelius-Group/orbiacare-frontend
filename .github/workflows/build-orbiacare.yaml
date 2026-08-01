@@ -2,7 +2,7 @@ name: Build OrbiaCare image
 
 on:
   push:
-    branches: [orbiacare-v4.14.0]
+    branches: [orbiacare-v4.16.2]
   workflow_dispatch:
 
 permissions:
@@ -47,5 +47,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ steps.image.outputs.name }}:v4.14.0
+            ${{ steps.image.outputs.name }}:v4.16.2
             ${{ steps.image.outputs.name }}:latest
