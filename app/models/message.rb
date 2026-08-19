@@ -446,6 +446,10 @@ class Message < ApplicationRecord
   end
 
   def set_conversation_activity
+    # Activity messages (labels, status, priority, assignment, sla, mute) should not reorder
+    # the conversation list, which is sorted by last_activity_at.
+    return if activity?
+
     # rubocop:disable Rails/SkipsModelValidations
     conversation.update_columns(last_activity_at: created_at, updated_at: Time.current)
     # rubocop:enable Rails/SkipsModelValidations
