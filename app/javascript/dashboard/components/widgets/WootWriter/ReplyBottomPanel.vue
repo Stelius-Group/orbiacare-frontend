@@ -11,10 +11,11 @@ import VideoCallButton from '../VideoCallButton.vue';
 import { INBOX_TYPES } from 'dashboard/helper/inbox';
 import { mapGetters } from 'vuex';
 import NextButton from 'dashboard/components-next/button/Button.vue';
+import TakeOverButton from './TakeOverButton.vue';
 
 export default {
   name: 'ReplyBottomPanel',
-  components: { NextButton, FileUpload, VideoCallButton },
+  components: { NextButton, FileUpload, VideoCallButton, TakeOverButton },
   mixins: [inboxMixin],
   props: {
     isNote: {
@@ -395,6 +396,7 @@ export default {
         sm
         @click="toggleInsertArticle"
       />
+      <TakeOverButton />
     </div>
     <div class="right-wrap">
       <NextButton
