@@ -2,6 +2,7 @@
 import { mapGetters } from 'vuex';
 import LoadingState from './components/widgets/LoadingState.vue';
 import NetworkNotification from './components/NetworkNotification.vue';
+import PlanExpiryBanner from './components/app/PlanExpiryBanner.vue';
 import UpdateBanner from './components/app/UpdateBanner.vue';
 import StatusBanner from './components/app/StatusBanner.vue';
 import PaymentPendingBanner from './components/app/PaymentPendingBanner.vue';
@@ -28,6 +29,7 @@ export default {
   components: {
     LoadingState,
     NetworkNotification,
+    PlanExpiryBanner,
     UpdateBanner,
     StatusBanner,
     PaymentPendingBanner,
@@ -140,6 +142,7 @@ export default {
     class="flex flex-col w-full h-screen min-h-0 bg-n-background"
     :dir="isRTL ? 'rtl' : 'ltr'"
   >
+    <PlanExpiryBanner v-if="currentAccountId" />
     <UpdateBanner :latest-chatwoot-version="latestChatwootVersion" />
     <StatusBanner />
     <template v-if="currentAccountId">

@@ -36,6 +36,7 @@ class AccountDashboard < Administrate::BaseDashboard
     status: AccountStatusField.with_options(collection: [%w[Active active], %w[Suspended suspended]]),
     suspension_history: SuspensionHistoryField,
     account_users: Field::HasMany,
+    plan_expires_on: Field::Date,
     custom_attributes: Field::String
   }.merge(enterprise_attribute_types).freeze
 
@@ -91,6 +92,7 @@ class AccountDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = (%i[
     name
     locale
+    plan_expires_on
     status
   ] + enterprise_form_attributes).freeze
 

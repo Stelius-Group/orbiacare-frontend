@@ -41,6 +41,8 @@ class Account < ApplicationRecord
 
   attr_accessor :suspension_category, :suspension_reason
 
+  store_accessor :custom_attributes, :plan_expires_on
+
   validates :name, presence: true
   # `domain` is the inbound email domain used to construct reply addresses
   # (see `inbound_email_domain`). Do not repurpose it for a website or any

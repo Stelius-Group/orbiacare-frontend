@@ -128,6 +128,7 @@
     "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Chatwoot",
     "UPGRADE": "Upgrade to continue using Chatwoot",
     "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Chatwoot",
+    "PLAN_EXPIRES": "Your plan expires on {date}! Contact your administrator to keep your access to OrbiaCare!",
     "OPEN_BILLING": "Open billing"
   },
   "FORMS": {
